@@ -37,11 +37,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "kundan.singh@rsystems.com"
     },
-    "lastModifiedOn": 1682402353408
+    "lastModifiedOn": 1682402794741
   },
   "creationTag": {
     "versionNumber": 0,
@@ -67,8 +67,67 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {"name":"CLAIM3YEARS","type":"string"},
+      {"name":"P1_AGE","type":"bigint"},
+      {"name":"P1_EMP_STATUS","type":"string"},
+      {"name":"BUS_USE","type":"string"},
+      {"name":"AD_BUILDINGS","type":"string"},
+      {"name":"SUM_INSURED_BUILDINGS","type":"double"},
+      {"name":"NCD_GRANTED_YEARS_B","type":"double"},
+      {"name":"AD_CONTENTS","type":"string"},
+      {"name":"RISK_RATED_AREA_C","type":"double"},
+      {"name":"SUM_INSURED_CONTENTS","type":"double"},
+      {"name":"NCD_GRANTED_YEARS_C","type":"double"},
+      {"name":"CONTENTS_COVER","type":"string"},
+      {"name":"BUILDINGS_COVER","type":"string"},
+      {"name":"SPEC_SUM_INSURED","type":"double"},
+      {"name":"SPEC_ITEM_PREM","type":"double"},
+      {"name":"UNSPEC_HRP_PREM","type":"double"},
+      {"name":"P1_MAR_STATUS","type":"string"},
+      {"name":"P1_POLICY_REFUSED","type":"string"},
+      {"name":"P1_SEX","type":"string"},
+      {"name":"APPR_ALARM","type":"string"},
+      {"name":"APPR_LOCKS","type":"string"},
+      {"name":"BEDROOMS","type":"double"},
+      {"name":"ROOF_CONSTRUCTION","type":"double"},
+      {"name":"WALL_CONSTRUCTION","type":"double"},
+      {"name":"FLOODING","type":"string"},
+      {"name":"LISTED","type":"double"},
+      {"name":"MAX_DAYS_UNOCC","type":"double"},
+      {"name":"NEIGH_WATCH","type":"string"},
+      {"name":"OCC_STATUS","type":"string"},
+      {"name":"OWNERSHIP_TYPE","type":"double"},
+      {"name":"PAYING_GUESTS","type":"double"},
+      {"name":"PROP_TYPE","type":"double"},
+      {"name":"SAFE_INSTALLED","type":"string"},
+      {"name":"SEC_DISC_REQ","type":"string"},
+      {"name":"SUBSIDENCE","type":"string"},
+      {"name":"YEARBUILT","type":"double"},
+      {"name":"PAYMENT_METHOD","type":"string"},
+      {"name":"LEGAL_ADDON_PRE_REN","type":"string"},
+      {"name":"LEGAL_ADDON_POST_REN","type":"string"},
+      {"name":"HOME_EM_ADDON_PRE_REN","type":"string"},
+      {"name":"HOME_EM_ADDON_POST_REN","type":"string"},
+      {"name":"GARDEN_ADDON_PRE_REN","type":"string"},
+      {"name":"GARDEN_ADDON_POST_REN","type":"string"},
+      {"name":"KEYCARE_ADDON_PRE_REN","type":"string"},
+      {"name":"KEYCARE_ADDON_POST_REN","type":"string"},
+      {"name":"HP1_ADDON_PRE_REN","type":"string"},
+      {"name":"HP1_ADDON_POST_REN","type":"string"},
+      {"name":"HP2_ADDON_PRE_REN","type":"string"},
+      {"name":"HP2_ADDON_POST_REN","type":"string"},
+      {"name":"HP3_ADDON_PRE_REN","type":"string"},
+      {"name":"HP3_ADDON_POST_REN","type":"string"},
+      {"name":"MTA_FLAG","type":"string"},
+      {"name":"LAST_ANN_PREM_GROSS","type":"double"},
+      {"name":"City","type":"string"},
+      {"name":"State","type":"string"},
+      {"name":"Zip Code","type":"string"},
+      {"name":"policy_start_month","type":"string"},
+      {"name":"target","type":"bigint"}
+    ],
+    "userModified": false
   },
   "dkuProperties": [],
   "metrics": {
