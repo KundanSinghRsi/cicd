@@ -1,0 +1,226 @@
+{
+  "type": "S3",
+  "managed": true,
+  "featureGroup": false,
+  "formatType": "parquet",
+  "checklists": {
+    "checklists": []
+  },
+  "checks": [],
+  "customMeta": {
+    "kv": {}
+  },
+  "flowOptions": {
+    "virtualizable": true,
+    "rebuildBehavior": "NORMAL",
+    "crossProjectBuildBehavior": "DEFAULT"
+  },
+  "readWriteOptions": {
+    "preserveOrder": false,
+    "writeBuckets": 1,
+    "forceSingleOutputFile": false,
+    "defaultReadOrdering": {
+      "enabled": false,
+      "rules": []
+    }
+  },
+  "formatParams": {
+    "parquetLowerCaseIdentifiers": false,
+    "representsNullFields": false,
+    "parquetCompressionMethod": "SNAPPY",
+    "parquetFlavor": "HIVE",
+    "parquetBlockSizeMB": 128
+  },
+  "partitioning": {
+    "ignoreNonMatchingFile": false,
+    "considerMissingRequestedPartitionsAsEmpty": false,
+    "dimensions": []
+  },
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "kundan.singh@rsystems.com"
+    },
+    "lastModifiedOn": 1682401713711
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "kundan.singh@rsystems.com"
+    },
+    "lastModifiedOn": 1682401713711
+  },
+  "tags": [],
+  "params": {
+    "bucket": "gis-data-us-east-1",
+    "metastoreSynchronizationEnabled": true,
+    "metastoreDatabaseName": "default",
+    "metastoreTableName": "${projectKey}_home_insurance_1_distinct_prepared",
+    "connection": "dataiku-managed-storage",
+    "path": "/managed-dss-data/${projectKey}/home_insurance_1_distinct_prepared",
+    "notReadyIfEmpty": false,
+    "filesSelectionRules": {
+      "mode": "ALL",
+      "excludeRules": [],
+      "includeRules": [],
+      "explicitFiles": []
+    }
+  },
+  "schema": {
+    "columns": [
+      {"name":"Policy_id","type":"string"},
+      {"name":"QUOTE_DATE","type":"string"},
+      {"name":"COVER_START","type":"string"},
+      {"name":"policy_start_date","type":"string"},
+      {"name":"CLAIM3YEARS","type":"boolean"},
+      {"name":"P1_AGE","type":"bigint"},
+      {"name":"P1_EMP_STATUS","type":"string"},
+      {"name":"P1_PT_EMP_STATUS","type":"string"},
+      {"name":"BUS_USE","type":"boolean"},
+      {"name":"CLERICAL","type":"boolean"},
+      {"name":"AD_BUILDINGS","type":"boolean"},
+      {"name":"RISK_RATED_AREA_B","type":"bigint"},
+      {"name":"SUM_INSURED_BUILDINGS","type":"bigint"},
+      {"name":"NCD_GRANTED_YEARS_B","type":"bigint"},
+      {"name":"AD_CONTENTS","type":"boolean"},
+      {"name":"RISK_RATED_AREA_C","type":"bigint"},
+      {"name":"SUM_INSURED_CONTENTS","type":"bigint"},
+      {"name":"NCD_GRANTED_YEARS_C","type":"bigint"},
+      {"name":"CONTENTS_COVER","type":"boolean"},
+      {"name":"BUILDINGS_COVER","type":"boolean"},
+      {"name":"SPEC_SUM_INSURED","type":"bigint"},
+      {"name":"SPEC_ITEM_PREM","type":"double"},
+      {"name":"UNSPEC_HRP_PREM","type":"double"},
+      {"name":"P1_DOB","type":"string"},
+      {"name":"P1_MAR_STATUS","type":"string"},
+      {"name":"P1_POLICY_REFUSED","type":"boolean"},
+      {"name":"P1_SEX","type":"string"},
+      {"name":"APPR_ALARM","type":"boolean"},
+      {"name":"APPR_LOCKS","type":"boolean"},
+      {"name":"BEDROOMS","type":"bigint"},
+      {"name":"ROOF_CONSTRUCTION","type":"bigint"},
+      {"name":"WALL_CONSTRUCTION","type":"bigint"},
+      {"name":"FLOODING","type":"boolean"},
+      {"name":"LISTED","type":"bigint"},
+      {"name":"MAX_DAYS_UNOCC","type":"bigint"},
+      {"name":"NEIGH_WATCH","type":"boolean"},
+      {"name":"OCC_STATUS","type":"string"},
+      {"name":"OWNERSHIP_TYPE","type":"bigint"},
+      {"name":"PAYING_GUESTS","type":"bigint"},
+      {"name":"PROP_TYPE","type":"bigint"},
+      {"name":"SAFE_INSTALLED","type":"boolean"},
+      {"name":"SEC_DISC_REQ","type":"boolean"},
+      {"name":"SUBSIDENCE","type":"boolean"},
+      {"name":"YEARBUILT","type":"bigint"},
+      {"name":"CAMPAIGN_DESC","type":"string"},
+      {"name":"PAYMENT_METHOD","type":"string"},
+      {"name":"PAYMENT_FREQUENCY","type":"bigint"},
+      {"name":"LEGAL_ADDON_PRE_REN","type":"boolean"},
+      {"name":"LEGAL_ADDON_POST_REN","type":"boolean"},
+      {"name":"HOME_EM_ADDON_PRE_REN","type":"boolean"},
+      {"name":"HOME_EM_ADDON_POST_REN","type":"boolean"},
+      {"name":"GARDEN_ADDON_PRE_REN","type":"boolean"},
+      {"name":"GARDEN_ADDON_POST_REN","type":"boolean"},
+      {"name":"KEYCARE_ADDON_PRE_REN","type":"boolean"},
+      {"name":"KEYCARE_ADDON_POST_REN","type":"boolean"},
+      {"name":"HP1_ADDON_PRE_REN","type":"string"},
+      {"name":"HP1_ADDON_POST_REN","type":"boolean"},
+      {"name":"HP2_ADDON_PRE_REN","type":"boolean"},
+      {"name":"HP2_ADDON_POST_REN","type":"boolean"},
+      {"name":"HP3_ADDON_PRE_REN","type":"string"},
+      {"name":"HP3_ADDON_POST_REN","type":"boolean"},
+      {"name":"MTA_FLAG","type":"boolean"},
+      {"name":"MTA_FAP","type":"double"},
+      {"name":"MTA_APRP","type":"double"},
+      {"name":"MTA_DATE","type":"string"},
+      {"name":"LAST_ANN_PREM_GROSS","type":"double"},
+      {"name":"City","type":"string"},
+      {"name":"State","type":"string"},
+      {"name":"Zip Code","type":"string"},
+      {"name":"POL_STATUS","type":"string"}
+    ],
+    "userModified": true
+  },
+  "dkuProperties": [],
+  "metrics": {
+    "probes": [
+      {
+        "type": "basic",
+        "enabled": true,
+        "computeOnBuildMode": "PARTITION",
+        "meta": {
+          "name": "Basic data",
+          "level": 0
+        },
+        "configuration": {}
+      },
+      {
+        "type": "records",
+        "enabled": true,
+        "computeOnBuildMode": "NO",
+        "meta": {
+          "name": "Record count",
+          "level": 0
+        },
+        "configuration": {}
+      }
+    ],
+    "engineConfig": {
+      "padRunsWithMetrics": false,
+      "hive": {
+        "active": true,
+        "extraConf": []
+      },
+      "basic": {},
+      "dss": {
+        "active": true,
+        "selection": {
+          "useMemTable": false,
+          "filter": {
+            "distinct": false,
+            "enabled": false
+          },
+          "partitionSelectionMethod": "ALL",
+          "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
+          "samplingMethod": "FULL",
+          "maxRecords": -1,
+          "targetRatio": 0.02,
+          "withinFirstN": -1,
+          "maxReadUncompressedBytes": -1
+        }
+      },
+      "sql": {
+        "active": true
+      },
+      "impala": {
+        "active": true
+      },
+      "spark": {
+        "active": true,
+        "extraConf": []
+      },
+      "python": {}
+    },
+    "displayedState": {
+      "columns": [],
+      "metrics": [
+        "basic:COUNT_COLUMNS",
+        "basic:COUNT_FILES",
+        "basic:SIZE",
+        "records:COUNT_RECORDS"
+      ]
+    }
+  },
+  "metricsChecks": {
+    "runOnBuild": false,
+    "checks": [],
+    "displayedState": {
+      "checks": []
+    }
+  },
+  "customFields": {}
+}
