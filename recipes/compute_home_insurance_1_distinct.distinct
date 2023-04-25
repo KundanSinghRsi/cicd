@@ -1,0 +1,258 @@
+{
+  "preFilter": {
+    "distinct": false,
+    "enabled": false
+  },
+  "keys": [
+    {
+      "column": "Policy_id"
+    },
+    {
+      "column": "QUOTE_DATE"
+    },
+    {
+      "column": "COVER_START"
+    },
+    {
+      "column": "policy_start_date"
+    },
+    {
+      "column": "CLAIM3YEARS"
+    },
+    {
+      "column": "P1_AGE"
+    },
+    {
+      "column": "P1_EMP_STATUS"
+    },
+    {
+      "column": "P1_PT_EMP_STATUS"
+    },
+    {
+      "column": "BUS_USE"
+    },
+    {
+      "column": "CLERICAL"
+    },
+    {
+      "column": "AD_BUILDINGS"
+    },
+    {
+      "column": "RISK_RATED_AREA_B"
+    },
+    {
+      "column": "SUM_INSURED_BUILDINGS"
+    },
+    {
+      "column": "NCD_GRANTED_YEARS_B"
+    },
+    {
+      "column": "AD_CONTENTS"
+    },
+    {
+      "column": "RISK_RATED_AREA_C"
+    },
+    {
+      "column": "SUM_INSURED_CONTENTS"
+    },
+    {
+      "column": "NCD_GRANTED_YEARS_C"
+    },
+    {
+      "column": "CONTENTS_COVER"
+    },
+    {
+      "column": "BUILDINGS_COVER"
+    },
+    {
+      "column": "SPEC_SUM_INSURED"
+    },
+    {
+      "column": "SPEC_ITEM_PREM"
+    },
+    {
+      "column": "UNSPEC_HRP_PREM"
+    },
+    {
+      "column": "P1_DOB"
+    },
+    {
+      "column": "P1_MAR_STATUS"
+    },
+    {
+      "column": "P1_POLICY_REFUSED"
+    },
+    {
+      "column": "P1_SEX"
+    },
+    {
+      "column": "APPR_ALARM"
+    },
+    {
+      "column": "APPR_LOCKS"
+    },
+    {
+      "column": "BEDROOMS"
+    },
+    {
+      "column": "ROOF_CONSTRUCTION"
+    },
+    {
+      "column": "WALL_CONSTRUCTION"
+    },
+    {
+      "column": "FLOODING"
+    },
+    {
+      "column": "LISTED"
+    },
+    {
+      "column": "MAX_DAYS_UNOCC"
+    },
+    {
+      "column": "NEIGH_WATCH"
+    },
+    {
+      "column": "OCC_STATUS"
+    },
+    {
+      "column": "OWNERSHIP_TYPE"
+    },
+    {
+      "column": "PAYING_GUESTS"
+    },
+    {
+      "column": "PROP_TYPE"
+    },
+    {
+      "column": "SAFE_INSTALLED"
+    },
+    {
+      "column": "SEC_DISC_REQ"
+    },
+    {
+      "column": "SUBSIDENCE"
+    },
+    {
+      "column": "YEARBUILT"
+    },
+    {
+      "column": "CAMPAIGN_DESC"
+    },
+    {
+      "column": "PAYMENT_METHOD"
+    },
+    {
+      "column": "PAYMENT_FREQUENCY"
+    },
+    {
+      "column": "LEGAL_ADDON_PRE_REN"
+    },
+    {
+      "column": "LEGAL_ADDON_POST_REN"
+    },
+    {
+      "column": "HOME_EM_ADDON_PRE_REN"
+    },
+    {
+      "column": "HOME_EM_ADDON_POST_REN"
+    },
+    {
+      "column": "GARDEN_ADDON_PRE_REN"
+    },
+    {
+      "column": "GARDEN_ADDON_POST_REN"
+    },
+    {
+      "column": "KEYCARE_ADDON_PRE_REN"
+    },
+    {
+      "column": "KEYCARE_ADDON_POST_REN"
+    },
+    {
+      "column": "HP1_ADDON_PRE_REN"
+    },
+    {
+      "column": "HP1_ADDON_POST_REN"
+    },
+    {
+      "column": "HP2_ADDON_PRE_REN"
+    },
+    {
+      "column": "HP2_ADDON_POST_REN"
+    },
+    {
+      "column": "HP3_ADDON_PRE_REN"
+    },
+    {
+      "column": "HP3_ADDON_POST_REN"
+    },
+    {
+      "column": "MTA_FLAG"
+    },
+    {
+      "column": "MTA_FAP"
+    },
+    {
+      "column": "MTA_APRP"
+    },
+    {
+      "column": "MTA_DATE"
+    },
+    {
+      "column": "LAST_ANN_PREM_GROSS"
+    },
+    {
+      "column": "City"
+    },
+    {
+      "column": "State"
+    },
+    {
+      "column": "Zip Code"
+    },
+    {
+      "column": "POL_STATUS"
+    }
+  ],
+  "globalCount": false,
+  "engineParams": {
+    "hive": {
+      "skipPrerunValidate": false,
+      "hiveconf": [],
+      "inheritConf": "default",
+      "addDkuUdf": false,
+      "executionEngine": "HIVESERVER2"
+    },
+    "sqlPipelineParams": {
+      "pipelineAllowMerge": true,
+      "pipelineAllowStart": true
+    },
+    "impala": {
+      "forceStreamMode": true
+    },
+    "lowerCaseSchemaIfEngineRequiresIt": true,
+    "sparkSQL": {
+      "skipPrerunValidate": false,
+      "pipelineAllowMerge": true,
+      "useGlobalMetastore": false,
+      "pipelineAllowStart": true,
+      "readParams": {
+        "mode": "AUTO",
+        "autoModeRepartitionInto": 10,
+        "map": {}
+      },
+      "overwriteOutputSchema": false,
+      "executionEngine": "SPARK_SUBMIT",
+      "sparkConfig": {
+        "inheritConf": "default",
+        "conf": []
+      }
+    }
+  },
+  "outputColumnNameOverrides": {},
+  "postFilter": {
+    "distinct": false,
+    "enabled": false
+  }
+}
