@@ -37,11 +37,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "kundan.singh@rsystems.com"
     },
-    "lastModifiedOn": 1682401713711
+    "lastModifiedOn": 1682402285645
   },
   "creationTag": {
     "versionNumber": 0,
@@ -68,10 +68,9 @@
   },
   "schema": {
     "columns": [
-      {"name":"Policy_id","type":"string"},
-      {"name":"QUOTE_DATE","type":"string"},
-      {"name":"COVER_START","type":"string"},
-      {"name":"policy_start_date","type":"string"},
+      {"name":"QUOTE_DATE","type":"date","meaning":"Date"},
+      {"name":"COVER_START","type":"date","meaning":"Date"},
+      {"name":"policy_start_date","type":"date","meaning":"Date"},
       {"name":"CLAIM3YEARS","type":"boolean"},
       {"name":"P1_AGE","type":"bigint"},
       {"name":"P1_EMP_STATUS","type":"string"},
