@@ -3,9 +3,362 @@
     "steps": [],
     "maxProcessedMemTableBytes": -1,
     "columnsSelection": {
-      "mode": "ALL"
+      "mode": "SELECT",
+      "list": [
+        {
+          "name": "Policy_id",
+          "d": true
+        },
+        {
+          "name": "QUOTE_DATE",
+          "d": false
+        },
+        {
+          "name": "COVER_START",
+          "d": false
+        },
+        {
+          "name": "policy_start_date",
+          "d": true
+        },
+        {
+          "name": "CLAIM3YEARS",
+          "d": false
+        },
+        {
+          "name": "P1_AGE",
+          "d": false
+        },
+        {
+          "name": "P1_EMP_STATUS",
+          "d": false
+        },
+        {
+          "name": "P1_PT_EMP_STATUS",
+          "d": false
+        },
+        {
+          "name": "BUS_USE",
+          "d": false
+        },
+        {
+          "name": "CLERICAL",
+          "d": false
+        },
+        {
+          "name": "AD_BUILDINGS",
+          "d": false
+        },
+        {
+          "name": "RISK_RATED_AREA_B",
+          "d": false
+        },
+        {
+          "name": "SUM_INSURED_BUILDINGS",
+          "d": false
+        },
+        {
+          "name": "NCD_GRANTED_YEARS_B",
+          "d": false
+        },
+        {
+          "name": "AD_CONTENTS",
+          "d": false
+        },
+        {
+          "name": "RISK_RATED_AREA_C",
+          "d": false
+        },
+        {
+          "name": "SUM_INSURED_CONTENTS",
+          "d": false
+        },
+        {
+          "name": "NCD_GRANTED_YEARS_C",
+          "d": false
+        },
+        {
+          "name": "CONTENTS_COVER",
+          "d": false
+        },
+        {
+          "name": "BUILDINGS_COVER",
+          "d": false
+        },
+        {
+          "name": "SPEC_SUM_INSURED",
+          "d": false
+        },
+        {
+          "name": "SPEC_ITEM_PREM",
+          "d": false
+        },
+        {
+          "name": "UNSPEC_HRP_PREM",
+          "d": false
+        },
+        {
+          "name": "P1_DOB",
+          "d": false
+        },
+        {
+          "name": "P1_MAR_STATUS",
+          "d": false
+        },
+        {
+          "name": "P1_POLICY_REFUSED",
+          "d": true
+        },
+        {
+          "name": "P1_SEX",
+          "d": false
+        },
+        {
+          "name": "APPR_ALARM",
+          "d": false
+        },
+        {
+          "name": "APPR_LOCKS",
+          "d": false
+        },
+        {
+          "name": "BEDROOMS",
+          "d": false
+        },
+        {
+          "name": "ROOF_CONSTRUCTION",
+          "d": false
+        },
+        {
+          "name": "WALL_CONSTRUCTION",
+          "d": false
+        },
+        {
+          "name": "FLOODING",
+          "d": false
+        },
+        {
+          "name": "LISTED",
+          "d": false
+        },
+        {
+          "name": "MAX_DAYS_UNOCC",
+          "d": false
+        },
+        {
+          "name": "NEIGH_WATCH",
+          "d": false
+        },
+        {
+          "name": "OCC_STATUS",
+          "d": false
+        },
+        {
+          "name": "OWNERSHIP_TYPE",
+          "d": false
+        },
+        {
+          "name": "PAYING_GUESTS",
+          "d": false
+        },
+        {
+          "name": "PROP_TYPE",
+          "d": false
+        },
+        {
+          "name": "SAFE_INSTALLED",
+          "d": false
+        },
+        {
+          "name": "SEC_DISC_REQ",
+          "d": false
+        },
+        {
+          "name": "SUBSIDENCE",
+          "d": false
+        },
+        {
+          "name": "YEARBUILT",
+          "d": false
+        },
+        {
+          "name": "CAMPAIGN_DESC",
+          "d": false
+        },
+        {
+          "name": "PAYMENT_METHOD",
+          "d": false
+        },
+        {
+          "name": "PAYMENT_FREQUENCY",
+          "d": false
+        },
+        {
+          "name": "LEGAL_ADDON_PRE_REN",
+          "d": false
+        },
+        {
+          "name": "LEGAL_ADDON_POST_REN",
+          "d": false
+        },
+        {
+          "name": "HOME_EM_ADDON_PRE_REN",
+          "d": false
+        },
+        {
+          "name": "HOME_EM_ADDON_POST_REN",
+          "d": false
+        },
+        {
+          "name": "GARDEN_ADDON_PRE_REN",
+          "d": false
+        },
+        {
+          "name": "GARDEN_ADDON_POST_REN",
+          "d": false
+        },
+        {
+          "name": "KEYCARE_ADDON_PRE_REN",
+          "d": false
+        },
+        {
+          "name": "KEYCARE_ADDON_POST_REN",
+          "d": false
+        },
+        {
+          "name": "HP1_ADDON_PRE_REN",
+          "d": false
+        },
+        {
+          "name": "HP1_ADDON_POST_REN",
+          "d": false
+        },
+        {
+          "name": "HP2_ADDON_PRE_REN",
+          "d": false
+        },
+        {
+          "name": "HP2_ADDON_POST_REN",
+          "d": false
+        },
+        {
+          "name": "HP3_ADDON_PRE_REN",
+          "d": false
+        },
+        {
+          "name": "HP3_ADDON_POST_REN",
+          "d": false
+        },
+        {
+          "name": "MTA_FLAG",
+          "d": false
+        },
+        {
+          "name": "MTA_FAP",
+          "d": false
+        },
+        {
+          "name": "MTA_APRP",
+          "d": false
+        },
+        {
+          "name": "MTA_DATE",
+          "d": false
+        },
+        {
+          "name": "LAST_ANN_PREM_GROSS",
+          "d": false
+        },
+        {
+          "name": "City",
+          "d": false
+        },
+        {
+          "name": "State",
+          "d": false
+        },
+        {
+          "name": "Zip Code",
+          "d": false
+        },
+        {
+          "name": "POL_STATUS",
+          "d": true
+        }
+      ]
     },
-    "columnWidthsByName": {},
+    "columnWidthsByName": {
+      "Policy_id": 113,
+      "QUOTE_DATE": 100,
+      "COVER_START": 127,
+      "policy_start_date": 143,
+      "CLAIM3YEARS": 100,
+      "P1_AGE": 100,
+      "P1_EMP_STATUS": 113,
+      "P1_PT_EMP_STATUS": 135,
+      "BUS_USE": 100,
+      "CLERICAL": 100,
+      "AD_BUILDINGS": 105,
+      "RISK_RATED_AREA_B": 143,
+      "SUM_INSURED_BUILDINGS": 173,
+      "NCD_GRANTED_YEARS_B": 158,
+      "AD_CONTENTS": 100,
+      "RISK_RATED_AREA_C": 143,
+      "SUM_INSURED_CONTENTS": 165,
+      "NCD_GRANTED_YEARS_C": 158,
+      "CONTENTS_COVER": 120,
+      "BUILDINGS_COVER": 128,
+      "SPEC_SUM_INSURED": 135,
+      "SPEC_ITEM_PREM": 134,
+      "UNSPEC_HRP_PREM": 134,
+      "P1_DOB": 100,
+      "P1_MAR_STATUS": 113,
+      "P1_POLICY_REFUSED": 143,
+      "P1_SEX": 100,
+      "APPR_ALARM": 100,
+      "APPR_LOCKS": 100,
+      "BEDROOMS": 134,
+      "ROOF_CONSTRUCTION": 143,
+      "WALL_CONSTRUCTION": 143,
+      "FLOODING": 100,
+      "LISTED": 134,
+      "MAX_DAYS_UNOCC": 134,
+      "NEIGH_WATCH": 100,
+      "OCC_STATUS": 100,
+      "OWNERSHIP_TYPE": 134,
+      "PAYING_GUESTS": 134,
+      "PROP_TYPE": 134,
+      "SAFE_INSTALLED": 120,
+      "SEC_DISC_REQ": 105,
+      "SUBSIDENCE": 100,
+      "YEARBUILT": 134,
+      "CAMPAIGN_DESC": 113,
+      "PAYMENT_METHOD": 120,
+      "PAYMENT_FREQUENCY": 143,
+      "LEGAL_ADDON_PRE_REN": 158,
+      "LEGAL_ADDON_POST_REN": 165,
+      "HOME_EM_ADDON_PRE_REN": 173,
+      "HOME_EM_ADDON_POST_REN": 180,
+      "GARDEN_ADDON_PRE_REN": 165,
+      "GARDEN_ADDON_POST_REN": 173,
+      "KEYCARE_ADDON_PRE_REN": 173,
+      "KEYCARE_ADDON_POST_REN": 180,
+      "HP1_ADDON_PRE_REN": 143,
+      "HP1_ADDON_POST_REN": 150,
+      "HP2_ADDON_PRE_REN": 143,
+      "HP2_ADDON_POST_REN": 150,
+      "HP3_ADDON_PRE_REN": 143,
+      "HP3_ADDON_POST_REN": 150,
+      "MTA_FLAG": 100,
+      "MTA_FAP": 134,
+      "MTA_APRP": 134,
+      "MTA_DATE": 100,
+      "LAST_ANN_PREM_GROSS": 158,
+      "City": 113,
+      "State": 100,
+      "Zip Code": 134,
+      "POL_STATUS": 100
+    },
     "columnUseScientificNotationByName": {},
     "coloring": {
       "scheme": "MEANING_AND_STATUS",
@@ -60,7 +413,9 @@
       "autoRefreshSample": false,
       "_refreshTrigger": 0
     },
-    "exploreUIParams": {},
+    "exploreUIParams": {
+      "autoRefresh": true
+    },
     "globalSearchQuery": "",
     "explorationFilters": [],
     "previewMode": "ALL_ROWS"
@@ -193,6 +548,7 @@
           "defaultRadius": 5.0,
           "singleShape": "FILLED_CIRCLE"
         },
+        "computeMode": "NORMAL",
         "xAxisMode": "NORMAL",
         "yAxisMode": "NORMAL",
         "pieOptions": {
