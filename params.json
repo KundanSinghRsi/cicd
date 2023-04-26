@@ -151,7 +151,6 @@
     "dkuProperties": []
   },
   "name": "cicd with internal git",
-  "projectStatus": "Sandbox",
   "metrics": {
     "probes": [],
     "engineConfig": {
@@ -207,11 +206,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 4,
+    "versionNumber": 5,
     "lastModifiedBy": {
       "login": "kundan.singh@rsystems.com"
     },
-    "lastModifiedOn": 1682493458220
+    "lastModifiedOn": 1682511364345
   },
   "creationTag": {
     "versionNumber": 0,
@@ -221,7 +220,9 @@
     "lastModifiedOn": 1682401484918
   },
   "shortDesc": "The project *cicd with internal git* was created by kundan.singh on Apr 25th 2023",
-  "tags": [],
+  "tags": [
+    "duplicated"
+  ],
   "customFields": {},
   "checklists": {
     "checklists": [
