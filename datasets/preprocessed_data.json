@@ -37,11 +37,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
       "login": "kundan.singh@rsystems.com"
     },
-    "lastModifiedOn": 1682402794741
+    "lastModifiedOn": 1682493260181
   },
   "creationTag": {
     "versionNumber": 0,
@@ -68,11 +68,18 @@
   },
   "schema": {
     "columns": [
+      {"name":"Policy_id","type":"string"},
+      {"name":"QUOTE_DATE","type":"string"},
+      {"name":"COVER_START","type":"string"},
+      {"name":"policy_start_date","type":"string"},
       {"name":"CLAIM3YEARS","type":"string"},
-      {"name":"P1_AGE","type":"bigint"},
+      {"name":"P1_AGE","type":"string"},
       {"name":"P1_EMP_STATUS","type":"string"},
+      {"name":"P1_PT_EMP_STATUS","type":"string"},
       {"name":"BUS_USE","type":"string"},
+      {"name":"CLERICAL","type":"string"},
       {"name":"AD_BUILDINGS","type":"string"},
+      {"name":"RISK_RATED_AREA_B","type":"double"},
       {"name":"SUM_INSURED_BUILDINGS","type":"double"},
       {"name":"NCD_GRANTED_YEARS_B","type":"double"},
       {"name":"AD_CONTENTS","type":"string"},
@@ -84,6 +91,7 @@
       {"name":"SPEC_SUM_INSURED","type":"double"},
       {"name":"SPEC_ITEM_PREM","type":"double"},
       {"name":"UNSPEC_HRP_PREM","type":"double"},
+      {"name":"P1_DOB","type":"string"},
       {"name":"P1_MAR_STATUS","type":"string"},
       {"name":"P1_POLICY_REFUSED","type":"string"},
       {"name":"P1_SEX","type":"string"},
@@ -104,7 +112,9 @@
       {"name":"SEC_DISC_REQ","type":"string"},
       {"name":"SUBSIDENCE","type":"string"},
       {"name":"YEARBUILT","type":"double"},
+      {"name":"CAMPAIGN_DESC","type":"double"},
       {"name":"PAYMENT_METHOD","type":"string"},
+      {"name":"PAYMENT_FREQUENCY","type":"double"},
       {"name":"LEGAL_ADDON_PRE_REN","type":"string"},
       {"name":"LEGAL_ADDON_POST_REN","type":"string"},
       {"name":"HOME_EM_ADDON_PRE_REN","type":"string"},
@@ -120,12 +130,14 @@
       {"name":"HP3_ADDON_PRE_REN","type":"string"},
       {"name":"HP3_ADDON_POST_REN","type":"string"},
       {"name":"MTA_FLAG","type":"string"},
+      {"name":"MTA_FAP","type":"double"},
+      {"name":"MTA_APRP","type":"double"},
+      {"name":"MTA_DATE","type":"string"},
       {"name":"LAST_ANN_PREM_GROSS","type":"double"},
       {"name":"City","type":"string"},
       {"name":"State","type":"string"},
       {"name":"Zip Code","type":"string"},
-      {"name":"policy_start_month","type":"string"},
-      {"name":"target","type":"bigint"}
+      {"name":"POL_STATUS","type":"string"}
     ],
     "userModified": false
   },
