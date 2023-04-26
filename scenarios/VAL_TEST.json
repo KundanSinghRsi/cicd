@@ -3,18 +3,18 @@
   "name": "val_test",
   "active": true,
   "creationTag": {
-    "versionNumber": 4,
-    "lastModifiedBy": {
-      "login": "kundan.singh@rsystems.com"
-    },
-    "lastModifiedOn": 1682488381811
-  },
-  "versionTag": {
     "versionNumber": 5,
     "lastModifiedBy": {
       "login": "kundan.singh@rsystems.com"
     },
     "lastModifiedOn": 1682493028686
+  },
+  "versionTag": {
+    "versionNumber": 6,
+    "lastModifiedBy": {
+      "login": "kundan.singh@rsystems.com"
+    },
+    "lastModifiedOn": 1682496612791
   },
   "checklists": {
     "checklists": []
@@ -43,7 +43,7 @@
         "minute": 14,
         "hour": 14,
         "timezone": "SERVER",
-        "lastUpdate": 1682493028686
+        "lastUpdate": 1682496612792
       }
     }
   ],
@@ -129,11 +129,120 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
-          "builds": [],
+          "builds": [
+            {
+              "type": "SAVED_MODEL",
+              "itemId": "wjL6zeFP",
+              "partitionsSpec": ""
+            }
+          ],
           "jobType": "RECURSIVE_BUILD",
           "refreshHiveMetastore": true,
           "handleWarningsAs": "WARNING",
           "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "check_WARNING_d_preprocessed_data_m_wjL6zeFP",
+        "type": "check_dataset",
+        "name": "Step #3",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "checks": [
+            {
+              "type": "DATASET",
+              "itemId": "preprocessed_data",
+              "partitionsSpec": ""
+            },
+            {
+              "type": "SAVED_MODEL",
+              "itemId": "wjL6zeFP",
+              "partitionsSpec": ""
+            }
+          ],
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "check_consistency",
+        "type": "check_consistency",
+        "name": "Step #4",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "handleWarningsAs": "WARNING",
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "comp_metrics_d_preprocessed_data",
+        "type": "compute_metrics",
+        "name": "Step #5",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "computes": [
+            {
+              "type": "DATASET",
+              "itemId": "preprocessed_data",
+              "partitionsSpec": ""
+            }
+          ],
+          "proceedOnFailure": false
+        }
+      },
+      {
+        "id": "report762a073cc27e52cfe925d82a35f0fadc",
+        "type": "send_report",
+        "name": "Step #6",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
+        "runConditionStatuses": [
+          "SUCCESS",
+          "WARNING"
+        ],
+        "runConditionExpression": "",
+        "resetScenarioStatus": false,
+        "delayBetweenRetries": 10,
+        "maxRetriesOnFail": 0,
+        "params": {
+          "failOnMessageNotSent": true,
+          "messaging": {
+            "type": "mail-scenario",
+            "configuration": {
+              "channelId": "Kundan Singh",
+              "subject": "DSS scenario ${scenarioName}: ${outcome}",
+              "recipient": "kundan.singh@rsystems.com",
+              "sendAsHTML": false,
+              "attachments": [],
+              "messageSource": "INLINE",
+              "templateFormat": "FREEMARKER",
+              "templateName": "default.ftl",
+              "message": "Hi \n\n    Sending message for compute metrics."
+            }
+          }
         }
       }
     ]
