@@ -3,18 +3,18 @@
   "name": "val_test",
   "active": true,
   "creationTag": {
-    "versionNumber": 1,
-    "lastModifiedBy": {
-      "login": "kundan.singh@rsystems.com"
-    },
-    "lastModifiedOn": 1682414853771
-  },
-  "versionTag": {
     "versionNumber": 2,
     "lastModifiedBy": {
       "login": "kundan.singh@rsystems.com"
     },
     "lastModifiedOn": 1682419481694
+  },
+  "versionTag": {
+    "versionNumber": 3,
+    "lastModifiedBy": {
+      "login": "kundan.singh@rsystems.com"
+    },
+    "lastModifiedOn": 1682486928624
   },
   "checklists": {
     "checklists": []
@@ -43,7 +43,7 @@
         "minute": 14,
         "hour": 14,
         "timezone": "SERVER",
-        "lastUpdate": 1682419481694
+        "lastUpdate": 1682486928624
       }
     }
   ],
@@ -55,7 +55,7 @@
         "configuration": {
           "channelId": "Kundan Singh",
           "subject": "DSS scenario ${scenarioName}: ${outcome}",
-          "recipient": "kundan.singh@rsystems.com",
+          "recipient": "kundansinghsorout9@gmail.com",
           "sendAsHTML": false,
           "attachments": [],
           "messageSource": "INLINE",
