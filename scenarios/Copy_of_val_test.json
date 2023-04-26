@@ -1,0 +1,94 @@
+{
+  "type": "step_based",
+  "name": "Copy of val_test",
+  "active": true,
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "kundan.singh@rsystems.com"
+    },
+    "lastModifiedOn": 1682492681167
+  },
+  "versionTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "kundan.singh@rsystems.com"
+    },
+    "lastModifiedOn": 1682492681167
+  },
+  "checklists": {
+    "checklists": []
+  },
+  "delayedTriggersBehavior": {
+    "delayWhileRunning": true,
+    "squashDelayedTriggers": true,
+    "suppressTriggersWhileRunning": true
+  },
+  "tags": [],
+  "triggers": [
+    {
+      "id": "1NuUTuRs",
+      "type": "temporal",
+      "name": "Time-based",
+      "delay": 5,
+      "active": false,
+      "params": {
+        "repeatFrequency": 1,
+        "frequency": "Hourly",
+        "startingFrom": "2023-04-25T08:44:00.000Z",
+        "daysOfWeek": [
+          "Tuesday"
+        ],
+        "monthlyRunOn": "ON_THE_DAY",
+        "minute": 14,
+        "hour": 14,
+        "timezone": "SERVER",
+        "lastUpdate": 1682492681167
+      }
+    }
+  ],
+  "reporters": [
+    {
+      "active": true,
+      "messaging": {
+        "type": "mail-scenario",
+        "configuration": {
+          "channelId": "Kundan Singh",
+          "subject": "DSS scenario ${scenarioName}: ${outcome}",
+          "recipient": "kundansinghsorout9@gmail.com",
+          "sendAsHTML": false,
+          "attachments": [],
+          "messageSource": "INLINE",
+          "templateFormat": "FREEMARKER",
+          "templateName": "default.ftl",
+          "message": "Hi Your Validation test cases has been started to run."
+        }
+      },
+      "id": "iMRO6RX9",
+      "name": "send mail",
+      "runConditionEnabled": false,
+      "runCondition": "outcome !\u003d \u0027SUCCESS\u0027",
+      "phase": "START"
+    },
+    {
+      "active": true,
+      "messaging": {
+        "type": "shell-scenario",
+        "configuration": {
+          "sendEverythingAsVariables": false,
+          "variables": []
+        }
+      },
+      "id": "e8YqEiUt",
+      "name": "Pytest command",
+      "runConditionEnabled": true,
+      "runCondition": "outcome !\u003d \u0027SUCCESS\u0027",
+      "phase": "END"
+    }
+  ],
+  "params": {
+    "steps": []
+  },
+  "automationLocal": false,
+  "customFields": {}
+}
