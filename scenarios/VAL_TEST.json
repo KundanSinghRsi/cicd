@@ -3,18 +3,18 @@
   "name": "val_test",
   "active": true,
   "creationTag": {
-    "versionNumber": 19,
-    "lastModifiedBy": {
-      "login": "kundan.singh@rsystems.com"
-    },
-    "lastModifiedOn": 1682504717613
-  },
-  "versionTag": {
     "versionNumber": 20,
     "lastModifiedBy": {
       "login": "kundan.singh@rsystems.com"
     },
     "lastModifiedOn": 1682504887379
+  },
+  "versionTag": {
+    "versionNumber": 21,
+    "lastModifiedBy": {
+      "login": "kundan.singh@rsystems.com"
+    },
+    "lastModifiedOn": 1682504928252
   },
   "checklists": {
     "checklists": []
@@ -43,7 +43,7 @@
         "minute": 14,
         "hour": 14,
         "timezone": "SERVER",
-        "lastUpdate": 1682504887380
+        "lastUpdate": 1682504928253
       }
     }
   ],
@@ -228,7 +228,7 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
-          "script": "# -*- coding: utf-8 -*-\nimport dataiku\nimport pandas as pd, numpy as np\nfrom dataiku import pandasutils as pdu\n\n# Read recipe inputs\npreprocessed_data \u003d dataiku.Dataset(\"preprocessed_data\")\npreprocessed_data_df \u003d preprocessed_data.get_dataframe()\n\nclient \u003d dataiku.api_client()\nproject \u003d client.get_project(\"cicd with internal git\")\nprint(\"##################3\", project)\nall_models \u003d dataiku.Model(\"cicd with internal git\").list_models()\nprint(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e I AM HERE\")\nprint(all_models)\nprint(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e END HERE\")\n\n# latest_model \u003d dataiku.Model(\"cicd with internal git\").latest_model()\nlatest_model_id \u003d all_models[0][\"id\"]\nprint(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003elatest_model_id\", latest_model_id)\nm \u003d dataiku.Model(latest_model_id)\nmy_predictor \u003d m.get_predictor()\nmy_clf \u003d my_predictor._clf\n\nprint(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003emy_clf\", my_clf)\n\n\ny_test \u003d preprocessed_data_df[:10000][\"POL_STATUS\"]\ny_predict \u003d m.predict(preprocessed_data_df[:10000].drop(columns\u003d[\"POL_STATUS\"]))\n\nprint(y_predict)\n# dataiku.\nprint(preprocessed_data_df.head(2))\n",
+          "script": "# -*- coding: utf-8 -*-\nimport dataiku\nimport pandas as pd, numpy as np\nfrom dataiku import pandasutils as pdu\n\n# Read recipe inputs\npreprocessed_data \u003d dataiku.Dataset(\"preprocessed_data\")\npreprocessed_data_df \u003d preprocessed_data.get_dataframe()\n\nclient \u003d dataiku.api_client()\nproject \u003d client.get_project(\"cicd with internal git\")\nprint(\"##################3\", project)\nall_models \u003d dataiku.Model(\"cicd with internal git\").list_models()\nprint(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e I AM HERE\")\nprint(all_models)\nprint(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e END HERE\")\n\n# latest_model \u003d dataiku.Model(\"cicd with internal git\").latest_model()\nlatest_model_id \u003d all_models[0][\"id\"]\nprint(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003elatest_model_id\", latest_model_id)\nm \u003d dataiku.Model(latest_model_id)\nmy_predictor \u003d m.get_predictor()\nmy_clf \u003d my_predictor._clf\n\nprint(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003emy_clf\", my_clf)\n\n\ny_test \u003d preprocessed_data_df[:10000][\"POL_STATUS\"]\ny_predict \u003d my_predictor.predict(preprocessed_data_df[:10000].drop(columns\u003d[\"POL_STATUS\"]))\n\nprint(y_predict)\n# dataiku.\nprint(preprocessed_data_df.head(2))\n",
           "envSelection": {
             "envMode": "INHERIT",
             "envName": "dash"
