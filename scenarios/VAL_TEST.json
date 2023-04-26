@@ -3,18 +3,18 @@
   "name": "val_test",
   "active": false,
   "creationTag": {
-    "versionNumber": 54,
-    "lastModifiedBy": {
-      "login": "kundan.singh@rsystems.com"
-    },
-    "lastModifiedOn": 1682513790814
-  },
-  "versionTag": {
     "versionNumber": 55,
     "lastModifiedBy": {
       "login": "kundan.singh@rsystems.com"
     },
     "lastModifiedOn": 1682517047708
+  },
+  "versionTag": {
+    "versionNumber": 56,
+    "lastModifiedBy": {
+      "login": "kundan.singh@rsystems.com"
+    },
+    "lastModifiedOn": 1682518777086
   },
   "checklists": {
     "checklists": []
@@ -31,7 +31,7 @@
       "type": "temporal",
       "name": "Time-based",
       "delay": 5,
-      "active": true,
+      "active": false,
       "params": {
         "repeatFrequency": 1,
         "frequency": "Hourly",
@@ -43,26 +43,7 @@
         "minute": 14,
         "hour": 14,
         "timezone": "SERVER",
-        "lastUpdate": 1682517047708
-      }
-    },
-    {
-      "id": "ynxgwxgL",
-      "type": "temporal",
-      "name": "Time-based",
-      "delay": 5,
-      "active": true,
-      "params": {
-        "repeatFrequency": 1,
-        "frequency": "Daily",
-        "startingFrom": "2023-04-26T13:50:00.000Z",
-        "daysOfWeek": [
-          "Wednesday"
-        ],
-        "minute": 20,
-        "hour": 19,
-        "timezone": "SERVER",
-        "lastUpdate": 1682517047708
+        "lastUpdate": 1682518777087
       }
     }
   ],
