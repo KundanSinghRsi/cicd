@@ -3,18 +3,18 @@
   "name": "val_test",
   "active": false,
   "creationTag": {
-    "versionNumber": 49,
-    "lastModifiedBy": {
-      "login": "kundan.singh@rsystems.com"
-    },
-    "lastModifiedOn": 1682512002642
-  },
-  "versionTag": {
     "versionNumber": 50,
     "lastModifiedBy": {
       "login": "kundan.singh@rsystems.com"
     },
     "lastModifiedOn": 1682512004653
+  },
+  "versionTag": {
+    "versionNumber": 51,
+    "lastModifiedBy": {
+      "login": "kundan.singh@rsystems.com"
+    },
+    "lastModifiedOn": 1682512323541
   },
   "checklists": {
     "checklists": []
@@ -43,7 +43,7 @@
         "minute": 14,
         "hour": 14,
         "timezone": "SERVER",
-        "lastUpdate": 1682512004654
+        "lastUpdate": 1682512323542
       }
     }
   ],
@@ -92,7 +92,7 @@
         "id": "build_0_true_d_preprocessed_data",
         "type": "build_flowitem",
         "name": "Step #1",
-        "runConditionType": "DISABLED",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -119,7 +119,7 @@
         "id": "build_0_true",
         "type": "build_flowitem",
         "name": "Step #2",
-        "runConditionType": "DISABLED",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -146,7 +146,7 @@
         "id": "check_WARNING_d_preprocessed_data_m_wjL6zeFP",
         "type": "check_dataset",
         "name": "Step #3",
-        "runConditionType": "DISABLED",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -176,7 +176,7 @@
         "id": "check_consistency",
         "type": "check_consistency",
         "name": "Step #4",
-        "runConditionType": "DISABLED",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -194,7 +194,7 @@
         "id": "comp_metrics_d_preprocessed_data",
         "type": "compute_metrics",
         "name": "Step #5",
-        "runConditionType": "DISABLED",
+        "runConditionType": "RUN_IF_STATUS_MATCH",
         "runConditionStatuses": [
           "SUCCESS",
           "WARNING"
@@ -228,7 +228,7 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
-          "script": "# -*- coding: utf-8 -*-\nimport git\n\n\nimport dataiku\nimport pandas as pd, numpy as np\nfrom dataiku import pandasutils as pdu\n\nfrom sklearn.metrics import precision_score, recall_score\nfrom sklearn.preprocessing import MultiLabelBinarizer, LabelEncoder\n\n# Read recipe inputs\npreprocessed_data \u003d dataiku.Dataset(\"preprocessed_data\")\npreprocessed_data_df \u003d preprocessed_data.get_dataframe()\n\nclient \u003d dataiku.api_client()\nproject \u003d client.get_project(\"cicd with internal git\")\n#print(\"##################3\", project)\nall_models \u003d dataiku.Model(\"cicd with internal git\").list_models()\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e I AM HERE\")\n#print(all_models)\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e END HERE\")\n\n# latest_model \u003d dataiku.Model(\"cicd with internal git\").latest_model()\nlatest_model_id \u003d all_models[0][\"id\"]\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003elatest_model_id\", latest_model_id)\nm \u003d dataiku.Model(latest_model_id)\nmy_predictor \u003d m.get_predictor()\nmy_clf \u003d my_predictor._clf\n\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003emy_clf\", my_clf)\n\n\ny_test \u003d preprocessed_data_df[:10000][\"POL_STATUS\"]\ny_predict \u003d my_predictor.predict(preprocessed_data_df[:10000].drop(columns\u003d[\"POL_STATUS\"]))[\"prediction\"]\n\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003ey_predict\",y_predict.shape, y_predict)\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003ey_test\",y_test.shape, y_test)\n\n# le \u003d MultiLabelBinarizer()\nle \u003d LabelEncoder()\nle.fit(list(y_test))\n\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003eHERE I AM\")\n\n\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003ele.transform(y_test)\", le.transform(list(y_test)).shape, le.transform(list(y_test)))\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003ele.transform(y_predict)\", le.transform(y_predict).shape, le.transform(y_predict))\n\np_score \u003d precision_score(\n          le.transform(list(y_test)), \n          le.transform(y_predict),\n          average\u003d\u0027macro\u0027\n      )\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003eprecision_score\", p_score) \n      \n# dataiku.\n#print(preprocessed_data_df.head(2))\n\nimport git\n\ndef merge(source_branch, dest_branch):\n    repo \u003d git.Repo(repository_path)\n    repo.git.checkout(dest_branch)\n    repo.git.merge(source_branch)\n    origin \u003d repo.remote(name\u003d\u0027origin\u0027)\n    origin.push()\n\nif p_score \u003e 0.5:\n    print(\"Push the code to Master\")\n    repository_path \u003d \"git@github.com:KundanSinghRsi/cicd.git\"\n    merge(\"dev\", \"main\")\n    \n    \nelse:\n    print(\"Don\u0027t push the code\")\n\n",
+          "script": "# -*- coding: utf-8 -*-\nimport git\n\n\nimport dataiku\nimport pandas as pd, numpy as np\nfrom dataiku import pandasutils as pdu\n\nfrom sklearn.metrics import precision_score, recall_score\nfrom sklearn.preprocessing import MultiLabelBinarizer, LabelEncoder\n\n# Read recipe inputs\npreprocessed_data \u003d dataiku.Dataset(\"preprocessed_data\")\npreprocessed_data_df \u003d preprocessed_data.get_dataframe()\n\nclient \u003d dataiku.api_client()\nproject \u003d client.get_project(\"cicd with internal git\")\n#print(\"##################3\", project)\nall_models \u003d dataiku.Model(\"cicd with internal git\").list_models()\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e I AM HERE\")\n#print(all_models)\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e END HERE\")\n\n# latest_model \u003d dataiku.Model(\"cicd with internal git\").latest_model()\nlatest_model_id \u003d all_models[0][\"id\"]\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003elatest_model_id\", latest_model_id)\nm \u003d dataiku.Model(latest_model_id)\nmy_predictor \u003d m.get_predictor()\nmy_clf \u003d my_predictor._clf\n\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003emy_clf\", my_clf)\n\n\ny_test \u003d preprocessed_data_df[:10000][\"POL_STATUS\"]\ny_predict \u003d my_predictor.predict(preprocessed_data_df[:10000].drop(columns\u003d[\"POL_STATUS\"]))[\"prediction\"]\n\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003ey_predict\",y_predict.shape, y_predict)\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003ey_test\",y_test.shape, y_test)\n\n# le \u003d MultiLabelBinarizer()\nle \u003d LabelEncoder()\nle.fit(list(y_test))\n\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003eHERE I AM\")\n\n\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003ele.transform(y_test)\", le.transform(list(y_test)).shape, le.transform(list(y_test)))\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003ele.transform(y_predict)\", le.transform(y_predict).shape, le.transform(y_predict))\n\np_score \u003d precision_score(\n          le.transform(list(y_test)), \n          le.transform(y_predict),\n          average\u003d\u0027macro\u0027\n      )\n#print(\"\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003e\u003eprecision_score\", p_score) \n      \n# dataiku.\n#print(preprocessed_data_df.head(2))\n\n#import git\n\n#def merge(source_branch, dest_branch):\n#    repo \u003d git.Repo(repository_path)\n#    repo.git.checkout(dest_branch)\n#    repo.git.merge(source_branch)\n#    origin \u003d repo.remote(name\u003d\u0027origin\u0027)\n#    origin.push()\n\nif p_score \u003e 0.5:\n    print(\"Push the code to Master\")\n    #repository_path \u003d \"git@github.com:KundanSinghRsi/cicd.git\"\n    #merge(\"dev\", \"main\")\n    \n    \nelse:\n    print(\"Don\u0027t push the code\")\n\n",
           "envSelection": {
             "envMode": "INHERIT",
             "envName": "dash"
