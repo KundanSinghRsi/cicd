@@ -150,7 +150,7 @@
     },
     "dkuProperties": []
   },
-  "name": "cicd with internal git",
+  "name": "Copy of cicd with internal git",
   "metrics": {
     "probes": [],
     "engineConfig": {
@@ -206,11 +206,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 5,
+    "versionNumber": 6,
     "lastModifiedBy": {
       "login": "kundan.singh@rsystems.com"
     },
-    "lastModifiedOn": 1682511364345
+    "lastModifiedOn": 1682511369449
   },
   "creationTag": {
     "versionNumber": 0,
@@ -219,7 +219,7 @@
     },
     "lastModifiedOn": 1682401484918
   },
-  "shortDesc": "The project *cicd with internal git* was created by kundan.singh on Apr 25th 2023",
+  "shortDesc": "The project *cicd with internal git* was created by kundan.singh on Apr 25th 2023\nThe project *COPYOFCICDWITHINTERNALGIT* was copied from *CICDWITHINTERNALGIT* on *dev* branch by kundan.singh on Apr 26th 2023",
   "tags": [
     "duplicated"
   ],
