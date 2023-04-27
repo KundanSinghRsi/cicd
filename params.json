@@ -11,7 +11,24 @@
   "hasSetupSection": false,
   "owner": "kundansinghsorout9@gmail.com",
   "permissionsVersion": "V2",
-  "permissions": [],
+  "permissions": [
+    {
+      "group": "space_administrators",
+      "admin": true,
+      "readProjectContent": false,
+      "writeProjectContent": false,
+      "exportDatasetsData": false,
+      "readDashboards": false,
+      "writeDashboards": false,
+      "moderateDashboards": false,
+      "shareToWorkspaces": false,
+      "runScenarios": false,
+      "manageDashboardAuthorizations": false,
+      "manageExposedElements": false,
+      "manageAdditionalDashboardUsers": false,
+      "executeApp": false
+    }
+  ],
   "additionalDashboardUsers": {
     "users": []
   },
@@ -189,11 +206,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 8,
+    "versionNumber": 9,
     "lastModifiedBy": {
-      "login": "kundansinghsorout9@gmail.com"
+      "login": "api:XMT9GUE1RJ8BBR0V"
     },
-    "lastModifiedOn": 1682581645051
+    "lastModifiedOn": 1682581831238
   },
   "creationTag": {
     "versionNumber": 0,
