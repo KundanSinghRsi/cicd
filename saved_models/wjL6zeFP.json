@@ -4,7 +4,7 @@
   "rebuildBehavior": "EXPLICIT",
   "name": "Predict POL_STATUS (multiclass)",
   "contentType": "prediction/py_memory",
-  "activeVersion": "1682587459623",
+  "activeVersion": "1682593409966",
   "conditionalOutputs": [],
   "partitioning": {
     "ignoreNonMatchingFile": false,
@@ -3061,11 +3061,11 @@
   "lastTrainIndex": 14,
   "lastTrainJobId": "Build_Predict_POL_STATUS__multiclass__2023-04-27T09-23-28.545",
   "versionTag": {
-    "versionNumber": 26,
+    "versionNumber": 27,
     "lastModifiedBy": {
       "login": "kundansinghsorout9@gmail.com"
     },
-    "lastModifiedOn": 1682587681535
+    "lastModifiedOn": 1682593605596
   },
   "creationTag": {
     "versionNumber": 0,
