@@ -9,26 +9,9 @@
   "projectType": "REGULAR",
   "projectAppType": "REGULAR",
   "hasSetupSection": false,
-  "owner": "kundan.singh@rsystems.com",
+  "owner": "kundansinghsorout9@gmail.com",
   "permissionsVersion": "V2",
-  "permissions": [
-    {
-      "group": "space_administrators",
-      "admin": true,
-      "readProjectContent": false,
-      "writeProjectContent": false,
-      "exportDatasetsData": false,
-      "readDashboards": false,
-      "writeDashboards": false,
-      "moderateDashboards": false,
-      "shareToWorkspaces": false,
-      "runScenarios": false,
-      "manageDashboardAuthorizations": false,
-      "manageExposedElements": false,
-      "manageAdditionalDashboardUsers": false,
-      "executeApp": false
-    }
-  ],
+  "permissions": [],
   "additionalDashboardUsers": {
     "users": []
   },
@@ -40,7 +23,6 @@
       "zonesGraphConnectZones": true
     },
     "gitCommitMode": "AUTO",
-    "useRemoteGit": true,
     "disableAutomaticTriggers": false,
     "integrations": {
       "integrations": []
@@ -207,11 +189,11 @@
     }
   },
   "versionTag": {
-    "versionNumber": 7,
+    "versionNumber": 8,
     "lastModifiedBy": {
-      "login": "kundan.singh@rsystems.com"
+      "login": "kundansinghsorout9@gmail.com"
     },
-    "lastModifiedOn": 1682511475993
+    "lastModifiedOn": 1682581645051
   },
   "creationTag": {
     "versionNumber": 0,
@@ -222,7 +204,8 @@
   },
   "shortDesc": "The project *cicd with internal git* was created by kundan.singh on Apr 25th 2023\nThe project *COPYOFCICDWITHINTERNALGIT* was copied from *CICDWITHINTERNALGIT* on *dev* branch by kundan.singh on Apr 26th 2023",
   "tags": [
-    "duplicated"
+    "duplicated",
+    "imported"
   ],
   "customFields": {},
   "checklists": {
