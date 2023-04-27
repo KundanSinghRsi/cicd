@@ -3,18 +3,18 @@
   "name": "Copy of val_test",
   "active": false,
   "creationTag": {
-    "versionNumber": 0,
-    "lastModifiedBy": {
-      "login": "kundansinghsorout9@gmail.com"
-    },
-    "lastModifiedOn": 1682593384904
-  },
-  "versionTag": {
     "versionNumber": 1,
     "lastModifiedBy": {
       "login": "kundansinghsorout9@gmail.com"
     },
     "lastModifiedOn": 1682600007609
+  },
+  "versionTag": {
+    "versionNumber": 2,
+    "lastModifiedBy": {
+      "login": "kundansinghsorout9@gmail.com"
+    },
+    "lastModifiedOn": 1682600313525
   },
   "checklists": {
     "checklists": []
@@ -43,7 +43,7 @@
         "minute": 14,
         "hour": 14,
         "timezone": "SERVER",
-        "lastUpdate": 1682600007610
+        "lastUpdate": 1682600313526
       }
     },
     {
@@ -62,7 +62,7 @@
         "minute": 20,
         "hour": 19,
         "timezone": "SERVER",
-        "lastUpdate": 1682600007610
+        "lastUpdate": 1682600313526
       }
     }
   ],
@@ -247,7 +247,7 @@
         "delayBetweenRetries": 10,
         "maxRetriesOnFail": 0,
         "params": {
-          "script": "# -*- coding: utf-8 -*-\nimport dataiku\nimport pandas as pd, numpy as np\nfrom dataiku import pandasutils as pdu\n\nfrom sklearn.metrics import precision_score, recall_score\nfrom sklearn.preprocessing import MultiLabelBinarizer, LabelEncoder\n\n# Read recipe inputs\npreprocessed_data \u003d dataiku.Dataset(\"preprocessed_data\")\npreprocessed_data_df \u003d preprocessed_data.get_dataframe()\n\ndef get_precission(p_name):\n    client \u003d dataiku.api_client()\n    project \u003d client.get_project(p_name)\n    all_models \u003d dataiku.Model(p_name).list_models()\n    latest_model_id \u003d all_models[0][\"id\"]\n    m \u003d dataiku.Model(latest_model_id)\n    my_predictor \u003d m.get_predictor()\n    my_clf \u003d my_predictor._clf\n    y_test \u003d preprocessed_data_df[:10000][\"POL_STATUS\"]\n    y_predict \u003d my_predictor.predict(preprocessed_data_df[:10000].drop(columns\u003d[\"POL_STATUS\"]))[\"prediction\"]\n\n    le \u003d LabelEncoder()\n    le.fit(list(y_test))\n\n    return precision_score(\n              le.transform(list(y_test)), \n              le.transform(y_predict),\n              average\u003d\u0027macro\u0027\n          )\n\n\n#import git\n\n#def merge(source_branch, dest_branch):\n#    repo \u003d git.Repo(repository_path)\n#    repo.git.checkout(dest_branch)\n#    repo.git.merge(source_branch)\n#    origin \u003d repo.remote(name\u003d\u0027origin\u0027)\n#    origin.push()\n\np_score_dev \u003d get_precission(\"copy cicd with internal git\")\np_score_main \u003d get_precission(\"cicd with internal git\")\n\nif p_score_main \u003e (p_score_dev - 0.1):\n    print(\"Push the code to Master\")\n    repository_path \u003d \"git@github.com:KundanSinghRsi/cicd.git\"\n    #merge(\"dev\", \"main\")\n    \n    \nelse:\n    print(\"Don\u0027t push the code\")\n\n",
+          "script": "# -*- coding: utf-8 -*-\nimport dataiku\nimport pandas as pd, numpy as np\nfrom dataiku import pandasutils as pdu\n\nfrom sklearn.metrics import precision_score, recall_score\nfrom sklearn.preprocessing import MultiLabelBinarizer, LabelEncoder\n\n# Read recipe inputs\npreprocessed_data \u003d dataiku.Dataset(\"preprocessed_data\")\npreprocessed_data_df \u003d preprocessed_data.get_dataframe()\n\ndef get_precission(p_name):\n    client \u003d dataiku.api_client()\n    project \u003d client.get_project(p_name)\n    all_models \u003d dataiku.Model(p_name).list_models()\n    latest_model_id \u003d all_models[0][\"id\"]\n    m \u003d dataiku.Model(latest_model_id)\n    my_predictor \u003d m.get_predictor()\n    my_clf \u003d my_predictor._clf\n    y_test \u003d preprocessed_data_df[:10000][\"POL_STATUS\"]\n    y_predict \u003d my_predictor.predict(preprocessed_data_df[:10000].drop(columns\u003d[\"POL_STATUS\"]))[\"prediction\"]\n\n    le \u003d LabelEncoder()\n    le.fit(list(y_test))\n\n    return precision_score(\n              le.transform(list(y_test)), \n              le.transform(y_predict),\n              average\u003d\u0027macro\u0027\n          )\n\n\n#import git\n\n#def merge(source_branch, dest_branch):\n#    repo \u003d git.Repo(repository_path)\n#    repo.git.checkout(dest_branch)\n#    repo.git.merge(source_branch)\n#    origin \u003d repo.remote(name\u003d\u0027origin\u0027)\n#    origin.push()\n\np_score_dev \u003d get_precission(\"Copy of cicd with internal git (dev_new1)\")\np_score_main \u003d get_precission(\"cicd with internal git\")\n\nif p_score_main \u003e (p_score_dev - 0.1):\n    print(\"Push the code to Master\")\n    repository_path \u003d \"git@github.com:KundanSinghRsi/cicd.git\"\n    #merge(\"dev\", \"main\")\n    \n    \nelse:\n    print(\"Don\u0027t push the code\")\n\n",
           "envSelection": {
             "envMode": "INHERIT",
             "envName": "dash"
