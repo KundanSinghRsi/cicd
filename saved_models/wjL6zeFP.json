@@ -3058,14 +3058,14 @@
     "predictionDisplayCharts": [],
     "labels": []
   },
-  "lastTrainIndex": 16,
-  "lastTrainJobId": "Build_Predict_POL_STATUS__multiclass__2023-04-27T11-54-26.200",
+  "lastTrainIndex": 17,
+  "lastTrainJobId": "sched_build_2023-04-27T12-18-59.881",
   "versionTag": {
-    "versionNumber": 31,
+    "versionNumber": 32,
     "lastModifiedBy": {
       "login": "kundansinghsorout9@gmail.com"
     },
-    "lastModifiedOn": 1682598180926
+    "lastModifiedOn": 1682598180976
   },
   "creationTag": {
     "versionNumber": 0,
